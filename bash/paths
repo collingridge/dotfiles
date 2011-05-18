@@ -26,8 +26,5 @@ export MANPATH=/opt/local/share/man:$MANPATH
 alias sqlplus='/opt/local/bin/rlwrap sqlplus'
 #alias mysql='/usr/local/mysql/bin/mysql'
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-rvm use 1.8.7
-
 # In order to get oci8 to compile from bundler
 export RC_ARCHS=i386
