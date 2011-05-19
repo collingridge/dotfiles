@@ -12,9 +12,9 @@ if [ "$LOCATION" = "NZX" ]; then
    export RSYNC_PROXY=$PROXY_HOST_PORT
 else
    echo Not setting proxies...
-   export http_proxy=""
-   export HTTP_PROXY=""
-   export RSYNC_PROXY=""
+   unset http_proxy
+   unset HTTP_PROXY
+   unset RSYNC_PROXY
 fi
 
 echo http_proxy: $http_proxy HTTP_PROXY: $HTTP_PROXY RSYNC_PROXY: $RSYNC_PROXY
