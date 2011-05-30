@@ -1,6 +1,7 @@
-export PATH="~/bin:~/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
+PATH="~/bin:~/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-
+#Rubygems binaries
+PATH="~/.gem/ruby/1.8/bin:$PATH"
 # Oracle related paths
 export ORACLE_HOME=/Library/Oracle/instantclient/10.2.0.4
 export TNS_ADMIN=$ORACLE_HOME
@@ -14,7 +15,7 @@ PATH=/Library/Oracle/instantclient/10.2.0.4:$PATH
 ##
 
 # MacPorts Installer addition on 2010-05-07_at_08:04:46: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
