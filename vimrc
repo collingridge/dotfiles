@@ -204,7 +204,10 @@ function! OpenURL()
   endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
-
-" Copy and paste linewise from F2 and F3
-map <F2> :.w !pbcopy<CR><CR>
-map <F3> :r !pbpaste<CR>
+" Clipboard using F1 and F2 (paste and copy)
+" Remember to remove this when moving to vim 7.3 or later where OSX clipboard
+" support is built in
+nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+nmap <F2> :.w !pbcopy<CR><CR>
+vmap <F2> :w !pbcopy<CR><CR>
