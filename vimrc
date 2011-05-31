@@ -205,3 +205,6 @@ function! OpenURL()
 endfunction
 map <Leader>w :call OpenURL()<CR>
 
+" Copy and paste linewise from F2 and F3
+map <F2> :.w !pbcopy<CR><CR>
+map <F3> :r !pbpaste<CR>

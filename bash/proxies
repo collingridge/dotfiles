@@ -12,13 +12,13 @@ if [ "$LOCATION" = "NZX" ]; then
    export RSYNC_PROXY=$PROXY_HOST_PORT
    echo http_proxy: $http_proxy HTTP_PROXY: $HTTP_PROXY RSYNC_PROXY: $RSYNC_PROXY
    echo linking .ssh/config
-   ln -sf ~/.ssh/config.example ~/.ssh/config
+   ln -sf ~/.ssh/config.source ~/.ssh/config
 else
    echo Not setting *_proxy environment variables
    unset http_proxy
    unset HTTP_PROXY
    unset RSYNC_PROXY
    echo unlinking .ssh/config
-   rm ~/.ssh/config
+   rm -f ~/.ssh/config
 fi
 
