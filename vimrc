@@ -47,21 +47,21 @@ if has("autocmd")
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
+    au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  " autocmd FileType text setlocal textwidth=78
+    " For all text files set 'textwidth' to 78 characters.
+    " autocmd FileType text setlocal textwidth=78
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \   exe "normal g`\"" |
+          \ endif
 
-  " Automatically load .vimrc source when saved
-  autocmd BufWritePost .vimrc source $MYVIMRC
+    " Automatically load .vimrc source when saved
+    autocmd BufWritePost .vimrc source $MYVIMRC
 
   augroup END
 
@@ -72,11 +72,11 @@ else
 endif " has("autocmd")
 
 " if has("folding")
-  " set foldenable
-  " set foldmethod=syntax
-  " set foldlevel=1
-  " set foldnestmax=2
-  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+" set foldenable
+" set foldmethod=syntax
+" set foldlevel=1
+" set foldnestmax=2
+" set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
 " endif
 
 " Softtabs, 2 spaces
@@ -198,16 +198,21 @@ function! OpenURL()
   let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
   echo s:uri
   if s:uri != ""
-	  exec "!open \"" . s:uri . "\""
+    exec "!open \"" . s:uri . "\""
   else
-	  echo "No URI found in line."
+    echo "No URI found in line."
   endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
-" Clipboard using F1 and F2 (paste and copy)
+
+" Clipboard using F1 and F2 (paste and copy) - cuts and pastes entire lines
+" only.
 " Remember to remove this when moving to vim 7.3 or later where OSX clipboard
 " support is built in
 nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 nmap <F2> :.w !pbcopy<CR><CR>
 vmap <F2> :w !pbcopy<CR><CR>
+
+"Options for vimdiff
+set diffopt+=iwhite
