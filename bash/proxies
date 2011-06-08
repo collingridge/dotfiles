@@ -13,6 +13,8 @@ if [ "$LOCATION" = "NZX" ]; then
    echo http_proxy: $http_proxy HTTP_PROXY: $HTTP_PROXY RSYNC_PROXY: $RSYNC_PROXY
    echo linking .ssh/config
    ln -sf ~/.ssh/config.source ~/.ssh/config
+   # echo enable adium proxy
+   # osascript ~/.dotfiles/applescript/adium_proxy_enable.scpt
 else
    echo Not setting *_proxy environment variables
    unset http_proxy
@@ -20,5 +22,7 @@ else
    unset RSYNC_PROXY
    echo unlinking .ssh/config
    rm -f ~/.ssh/config
+   #echo disable adium proxy
+   #osascript ~/.dotfiles/applescript/adium_proxy_disable.scpt
 fi
 
