@@ -18,3 +18,7 @@ alias be='bundle exec'
 
 alias start_mysql="sudo /Library/StartupItems/MySQLCOM/MySQLCOM start"
 alias stop_mysql="sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop"
+
+if [[ $OSTYPE == 'Darwin' ]]; then
+  alias sqlplus='/opt/local/bin/rlwrap sqlplus'
+fi
