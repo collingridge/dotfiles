@@ -18,3 +18,5 @@ alias be='bundle exec'
 
 alias start_mysql="sudo /Library/StartupItems/MySQLCOM/MySQLCOM start"
 alias stop_mysql="sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop"
+
+alias git_diff_wrapper="vimdiff \"$2\" \"$5\""

@@ -9,7 +9,7 @@
 	branch = auto
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = mate_wait
+	editor = vim 
 	autocrlf = input
 [apply]
 	whitespace = nowarn
@@ -18,3 +18,7 @@
 [github]
 	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
 	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+[diff]
+  external = ~/.dotfiles/bin/git_diff_wrapper.sh
+[pager]
+  diff =
