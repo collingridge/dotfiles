@@ -1,4 +1,4 @@
-LOCATION=`~/dotfiles/bin/get_network_location.pl`
+LOCATION=`~/.dotfiles/bin/get_network_location.pl`
 echo Location: $LOCATION
 if [ "$LOCATION" = "NZX" ]; then
    echo Setting proxy environment variables
