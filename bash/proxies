@@ -12,7 +12,7 @@ if [[ $NET_LOCATION == NZX* ]]; then
    export https_proxy=$HTTP_PROXY
    # RSYNC_PROXY lets macports get to the internet
    export RSYNC_PROXY=$PROXY_HOST_PORT
-   echo http_proxy: $http_proxy HTTP_PROXY: $HTTP_PROXY RSYNC_PROXY: $RSYNC_PROXY
+   echo http_proxy: $http_proxy HTTP_PROXY: $HTTP_PROXY RSYNC_PROXY: $RSYNC_PROXY https_proxy: $https_proxy
    echo linking .ssh/config
    ln -sf ~/.ssh/config.source ~/.ssh/config
    # echo enable adium proxy
