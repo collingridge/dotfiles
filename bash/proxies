@@ -8,6 +8,8 @@ if [[ $NET_LOCATION == NZX* ]]; then
    PROXY_HOST_PORT=$PROXY_HOST:$PROXY_PORT
    export HTTP_PROXY=http://$PROXY_HOST_PORT
    export http_proxy=$HTTP_PROXY
+   # For github and anything else that uses https from the command line
+   export https_proxy=$HTTP_PROXY
    # RSYNC_PROXY lets macports get to the internet
    export RSYNC_PROXY=$PROXY_HOST_PORT
    echo http_proxy: $http_proxy HTTP_PROXY: $HTTP_PROXY RSYNC_PROXY: $RSYNC_PROXY
