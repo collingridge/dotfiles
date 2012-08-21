@@ -1,6 +1,6 @@
-LOCATION=`~/.dotfiles/bin/get_network_location.pl`
-echo Location: $LOCATION
-if [ "$LOCATION" = "NZX" ]; then
+NET_LOCATION=`scselect | grep \* |  grep -v current | sed 's:^[^(]*(\(.*\))$:\1:g'`
+echo Location: $NET_LOCATION
+if [[ $NET_LOCATION == NZX* ]]; then
    echo Setting proxy environment variables
    # Proxy settings for NZX - note also need corkscrew to make git (and mac ports?) play nicely
    PROXY_HOST=proxy.nzx.com
