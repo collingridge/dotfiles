@@ -3,8 +3,8 @@ echo Location: $NET_LOCATION
 if [[ $NET_LOCATION == NZX* ]]; then
    echo Setting proxy environment variables
    # Proxy settings for NZX - note also need corkscrew to make git (and mac ports?) play nicely
-   PROXY_HOST=proxy.nzx.com
-   PROXY_PORT=3128
+   PROXY_HOST=aproxy
+   PROXY_PORT=1234
    PROXY_HOST_PORT=$PROXY_HOST:$PROXY_PORT
    export HTTP_PROXY=http://$PROXY_HOST_PORT
    export http_proxy=$HTTP_PROXY
